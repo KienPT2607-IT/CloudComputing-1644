@@ -7,15 +7,21 @@ var logger = require('morgan');
 // --- Declare routers ---
 var indexRouter = require('./routes/index');
 
+// --- Use mongoose to connect to database ---
 var mongoose = require("mongoose");
 var db = "mongodb://localhost:27017/mykingdom_local";
 mongoose.connect(db, { useNewUrlParser: true });
+
+// --- Use dateFormat to format date-time ---
+var hbs = require('hbs');
+hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 var app = express();
 
 // --- Config body-parser ---
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
