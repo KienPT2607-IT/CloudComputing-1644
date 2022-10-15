@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 // --- Declare routers ---
 var indexRouter = require('./routes/index');
+var toyRouter = require('./routes/toy')
 
 // --- Use mongoose to connect to database ---
 var mongoose = require("mongoose");
@@ -35,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // --- Use router 
 app.use('/', indexRouter);
+app.use('/toy', toyRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

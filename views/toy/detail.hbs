@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row mt-3 justify-content-center">
+    <div class="card-group">
+      <div class="col col-8">
+        <div class="card h-100">
+          <img src="{{toy.image1}}" class="card-img-top">
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">{{toy.name}}</h2>
+            <h4 class="fw-bold mt-5">{{toy.price}}$</h4>
+            <form class="">
+              <div class="mb-3">
+                <input type="number" class="form-control" min="0" max="{{toy.quantity}}">
+                <div class="form-text text-success">Available</div>
+              </div>
+              <button type="submit" class="btn btn-primary">Purchase</button>
+            </form>
+            <table class="table text-center table-bordered mt-3">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <img src="/images/age-50.png" width="30">
+                  </th>
+                  <th scope="col">
+                    <img src="/images/pieces-50.png" width="30">
+                  </th>
+                  <th scope="col">
+                    <img src="/images/hashtag-50.png" width="30">
+                  </th>
+                  <th scope="col">
+                    <img src="/images/origin-50.png" width="30">
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="fw-semibold">{{toy.age}}</span>
+                  </td>
+                  <td>
+                    <span class="fw-semibold">{{toy.pieces}}</span>
+                  </td>
+                  <td>
+                    <span class="fw-semibold">{{toy.itemCode}}</span>
+                  </td>
+                  <td>
+                    <span class="fw-semibold">{{toy.origin}}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="fw-semibold">Ages</span>
+                  </td>
+                  <td>
+                    <span class="fw-semibold">Pieces</span>
+                  </td>
+                  <td>
+                    <span class="fw-semibold">Item</span>
+                  </td>
+                  <td>
+                    <span class="fw-semibold">Origin</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

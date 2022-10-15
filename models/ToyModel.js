@@ -12,7 +12,7 @@ var ToySchema = new mongoose.Schema(
         image1: String,
         image2: String,
         image3: String,
-        age: Number
+        age: String
     },
     {
         versionKey: false
