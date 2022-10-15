@@ -3,16 +3,15 @@ const mongoose = require("mongoose")
 var ToySchema = new mongoose.Schema(
     {
         name: String,
-        codeOfProduct: Number,
+        theme: String,
+        itemCode: Number,
         price: Number,
         origin: String,
-        concept: String,
-        brand: String,
+        pieces: Number,
         quantity: Number,
         image1: String,
         image2: String,
         image3: String,
-        gender: String,
         age: Number
     },
     {
