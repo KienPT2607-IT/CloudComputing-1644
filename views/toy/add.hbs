@@ -1,0 +1,74 @@
+<div class="container">
+	<form action="/toy/add" method="post">
+		{{!-- Name --}}
+		<div class="form-floating m-2">
+			<input type="text" class="form-control" id="floatingName" placeholder="Name">
+			<label for="floatingName">Name</label>
+		</div>
+		{{!-- Theme --}}
+		<div class="form-floating m-2">
+			<select class="form-select" id="floatingTheme" aria-label="Floating label ">
+				<option value="None">None</option>
+				<option value="Minions">Minions</option>
+				<option value="NinjaGo">NinjaGo</option>
+				<option value="Minecraft">Minecraft</option>
+				<option value="Architecture">Architecture</option>
+			</select>
+			<label for="floatingTheme">Theme</label>
+		</div>
+		{{!-- itemCode --}}
+		<div class="form-floating m-2">
+			<input type="number" class="form-control" min="0" id="floatingItemCode" placeholder="ItemCode">
+			<label for="floatingItemCode">Item-Code</label>
+		</div>
+		{{!-- price --}}
+		<div class="form-floating m-2">
+			<input type="number" class="form-control" min="0.00" step="0.01" id="floatingPrice" placeholder="Price">
+			<label for="floatingPrice">Price</label>
+		</div>
+		{{!-- origin --}}
+		<div class="form-floating m-2">
+			<select class="form-select" id="floatingOrigin" aria-label="Floating label ">
+				<option value="None">None</option>
+				<option value="Denmark">Denmark</option>
+				<option value="The United States">The United States</option>
+			</select>
+			<label for="floatingOrigin">Origin</label>
+		</div>
+		{{!-- pieces --}}
+		<div class="form-floating m-2">
+			<input type="number" class="form-control" min="0" id="floatingPieces" placeholder="Pieces">
+			<label for="floatingPieces">Pieces</label>
+		</div>
+		{{!-- quantity --}}
+		<div class="form-floating m-2">
+			<input type="number" class="form-control" min="0" id="floatingQuantity" placeholder="Quantity">
+			<label for="floatingQuantity">Quantity</label>
+		</div>
+		{{!-- age --}}
+		<div class="form-floating m-2">
+			<select class="form-select" id="floatingAge" aria-label="Floating label ">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+			<label for="floatingAge">Age</label>
+		</div>
+		{{!-- image --}}
+		<div class="form-floating m-2">
+			<input type="text" class="form-control" id="floatingImage1" placeholder="Image1">
+			<label for="floatingImage1">Image-1</label>
+		</div>
+		<div class="form-floating m-2">
+			<input type="text" class="form-control" id="floatingImage2" placeholder="Image2">
+			<label for="floatingImage2">Image-2</label>
+		</div>
+		<div class="form-floating m-2">
+			<input type="text" class="form-control" id="floatingImage3" placeholder="Image3">
+			<label for="floatingImage3">Image-3</label>
+		</div>
+		<div class="form-group m-2">
+			<input class="btn btn-primary mt-3" type="submit" value="Add">
+		</div>
+	</form>
+</div>

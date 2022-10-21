@@ -1,0 +1,42 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col" class="text-center" colspan="3">Toy</th>
+			<th scope="col">
+				<a href="/toy/add">
+					<img src="/images/actions/addition.png" alt="">
+				</a>
+			</th>
+		</tr>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Image</th>
+			<th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody class="table-group-divider">
+		{{#each toy}}
+		<tr>
+			<th scope="row">{{itemCode}}</th>
+			<td>{{name}}</td>
+			<td>
+				<a href="/toy/detail/{{_id}}">
+					<img src="{{image1}}" width="200" alt="">
+				</a>
+			</td>
+			<td>
+				<a href="/toy/detail/{{_id}}">
+					<img src="/images/actions/eye.png" alt="">
+				</a>
+				<a href="/toy/edit/{{_id}}">
+					<img src="/images/actions/gear.png" alt="">
+				</a>
+				<a href="/toy/delete/{{_id}}">
+					<img src="/images/actions/delete.png" alt="">
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

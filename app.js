@@ -16,6 +16,10 @@ mongoose.connect(db, { useNewUrlParser: true });
 // --- Use dateFormat to format date-time ---
 var hbs = require('hbs');
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
+// --- Use helper-euqal to compare things ---
+hbs.registerHelper("equal", require("handlebars-helper-equal"))
+
+
 
 var app = express();
 
