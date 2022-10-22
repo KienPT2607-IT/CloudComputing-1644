@@ -7,6 +7,10 @@ body {
 	background-color: #ffcf00;
 }
 
+.footer {
+	background-color: rgb(37,68,102);
+}
+
 a {
 	color: #00B7FF;
 	text-decoration: none;
