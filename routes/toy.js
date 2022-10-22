@@ -1,5 +1,7 @@
 const express = require("express");
 const ToyModel = require("../models/ToyModel")
+const ThemeModel = require("../models/ThemeModel")
+const OriginModel = require("../models/OriginModel")
 const router = express.Router();
 
 // Shop index - User
@@ -32,16 +34,27 @@ router.get('/admin', (req, res) => {
 
 //  Render add form
 router.get('/add', (req, res) => {
-    res.render("toy/add");
+    ThemeModel.find((err, theme_data) => {
+        if (!err) {
+            OriginModel.find((err, origin_data) => {
+                if (!err) {
+                    res.render("toy/add", {
+                        theme: theme_data,
+                        origin: origin_data
+                    });
+                }
+            })
+        }
+    })
 })
 
 
-//  Receive and handle data sent via form
+//  Receive and handle data sent via add form
 router.post('/add', (req, res) => {
     ToyModel.create(req.body, (err) => {
         if (!err) {
             console.log('Add new toy successfully!')
-            res.redirect("/admin")
+            res.redirect("/toy")
         }
     })
 })
@@ -55,5 +68,61 @@ router.get('/detail/:id', (req, res) => {
         }
     })
 })
+
+// Toy detail - admin
+router.get('/ad-detail/:id', (req, res) => {
+    var toy_id = req.params.id
+    ToyModel.findById(toy_id, (err, data) => {
+        if (!err) {
+            res.render("toy/ad-detail", { toy: data })
+        }
+    })
+})
+
+// Render edit form
+router.get('/edit/:id', (req, res) => {
+    ToyModel.findById(req.params.id, (err, data) => {
+        if (!err) {
+            ThemeModel.find((err, theme_data) => {
+                if (!err) {
+                    OriginModel.find((err, origin_data) => {
+                        if (!err) {
+                            res.render("toy/edit", {
+                                toy: data,
+                                theme: theme_data,
+                                origin: origin_data
+                            })
+                        }
+                    })
+                }
+            })
+        }
+    })
+})
+
+//  Receive and handle data sent via edit form
+router.post('/edit/:id', (req, res) => {
+    var id = req.params.id;
+    var toy = req.body;
+    ToyModel.findByIdAndUpdate(id, toy, (err) => {
+        if (!err) {
+            console.log("Toy updated successfully !")
+            res.redirect("/toy/admin")
+        } else {
+            console.log(err)
+        }
+    })
+})
+
+// Delete a toy
+router.get('/delete/:id', (req, res) => {
+    ToyModel.findByIdAndDelete(req.params.id, (err) => {
+        if (!err) {
+            console.log("Toy deleted successfully !");
+            res.redirect("/toy/admin");
+        }
+    })
+})
+
 
 module.exports = router;

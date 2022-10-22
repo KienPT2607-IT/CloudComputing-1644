@@ -1,0 +1,86 @@
+<div class="container">
+    <form action="/toy/edit/{{toy._id}}" method="post" class="card p-3 mt-2 bg-light">
+        {{!-- Name --}}
+        <div class="form-floating m-2">
+            <input type="text" name="name" class="form-control" id="floatingName" placeholder="Name"
+                value="{{toy.name}}">
+            <label for="floatingName">Name</label>
+        </div>
+        {{!-- Theme --}}
+        <div class="form-floating m-2">
+            <select class="form-select" name="theme" id="floatingTheme" aria-label="Floating label ">
+                <option value="Please chose">Please chose</option>
+                {{#each theme}}
+                <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+            <label for="floatingTheme">Theme</label>
+        </div>
+        {{!-- itemCode --}}
+        <div class="form-floating m-2">
+            <input type="number" value="{{toy.itemCode}}" name="itemCode" class="form-control" min="0"
+                id="floatingItemCode" placeholder="ItemCode">
+            <label for="floatingItemCode">Item-Code</label>
+        </div>
+        {{!-- price --}}
+        <div class="form-floating m-2">
+            <input type="number" value="{{toy.price}}" name="price" class="form-control" min="0.00" step="0.01"
+                id="floatingPrice" placeholder="Price">
+            <label for="floatingPrice">Price - €</label>
+        </div>
+        {{!-- origin --}}
+        <div class="form-floating m-2">
+            <select class="form-select" name="origin" id="floatingOrigin" aria-label="Floating label ">
+                <option value="Please chose">Please chose</option>
+                {{#each origin}}
+                <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+            <label for="floatingOrigin">Origin</label>
+        </div>
+        {{!-- pieces --}}
+        <div class="form-floating m-2">
+            <input type="number" value="{{toy.pieces}}" name="pieces" class="form-control" min="0" id="floatingPieces"
+                placeholder="Pieces">
+            <label for="floatingPieces">Pieces</label>
+        </div>
+        {{!-- quantity --}}
+        <div class="form-floating m-2">
+            <input type="number" value="{{toy.quantity}}" name="quantity" class="form-control" min="0"
+                id="floatingQuantity" placeholder="Quantity">
+            <label for="floatingQuantity">Quantity</label>
+        </div>
+        {{!-- age --}}
+        <div class="form-floating m-2">
+            <select class="form-select" name="age" id="floatingAge" aria-label="Floating label ">
+                <option value="Please chose">Please chose</option>
+                <option value="1.5+">1.5+</option>
+                <option value="4+">4+</option>
+                <option value="6+">6+</option>
+                <option value="9+">9+</option>
+                <option value="13+">13+</option>
+                <option value="18+">18+</option>
+            </select>
+            <label for="floatingAge">Age</label>
+        </div>
+        {{!-- image --}}
+        <div class="form-floating m-2">
+            <input type="text" value="{{toy.image1}}" name="image1" class="form-control" id="floatingImage1"
+                placeholder="Image1">
+            <label for="floatingImage1">Image-1</label>
+        </div>
+        <div class="form-floating m-2">
+            <input type="text" value="{{toy.image2}}" name="image2" class="form-control" id="floatingImage2"
+                placeholder="Image2">
+            <label for="floatingImage2">Image-2</label>
+        </div>
+        <div class="form-floating m-2">
+            <input type="text" value="{{toy.image3}}" name="image3" class="form-control" id="floatingImage3"
+                placeholder="Image3">
+            <label for="floatingImage3">Image-3</label>
+        </div>
+        <div class="form-group m-2">
+            <input class="btn btn-primary mt-3" type="submit" value="Edit">
+        </div>
+    </form>
+</div>

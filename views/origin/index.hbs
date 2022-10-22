@@ -1,0 +1,37 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col" class="text-center" colspan="3">Origin</th>
+			<th scope="col">
+				<a href="/origin/add">
+					<img src="/images/actions/addition.png" alt="">
+				</a>
+			</th>
+		</tr>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Image</th>
+			<th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody class="table-group-divider">
+		{{#each origin}}
+		<tr>
+			<td>{{name}}</td>
+			<td>
+				<a href="#">
+					<img src="{{image}}" width="200" alt="">
+				</a>
+			</td>
+			<td>
+				<a href="/origin/edit/{{_id}}">
+					<img src="/images/actions/gear.png" alt="">
+				</a>
+				<a href="/origin/delete/{{_id}}">
+					<img src="/images/actions/delete.png" alt="">
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

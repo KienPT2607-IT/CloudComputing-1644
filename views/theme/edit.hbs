@@ -1,0 +1,19 @@
+<div class="container">
+    <form action="/theme/edit/{{theme._id}}" method="post" class="card p-3 mt-2 bg-light">
+        {{!-- name --}}
+        <div class="form-floating m-2">
+            <input type="text" value="{{theme.name}}" name="name" class="form-control" id="floatingName"
+                placeholder="Name">
+            <label for="floatingName">Name</label>
+        </div>
+        {{!-- image --}}
+        <div class="form-floating m-2">
+            <input type="text" value="{{theme.image}}" name="image" class="form-control" id="floatingImage1"
+                placeholder="Image1">
+            <label for="floatingImage1">Image</label>
+        </div>
+        <div class="form-group m-2">
+            <input class="btn btn-primary mt-3" name="" type="submit" value="Edit">
+        </div>
+    </form>
+</div>
