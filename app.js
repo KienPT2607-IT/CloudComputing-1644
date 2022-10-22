@@ -12,8 +12,15 @@ var originRouter = require('./routes/origin')
 
 // --- Use mongoose to connect to database ---
 var mongoose = require("mongoose");
-var db = "mongodb://localhost:27017/mykingdom_local";
-mongoose.connect(db, { useNewUrlParser: true });
+// var db = "mongodb://localhost:27017/mykingdom_local"; // Local
+var db = "mongodb+srv://kienptgch200815:s2trungkien2s@cluster0.yunqwou.mongodb.net/mykingdom"; // Remote
+mongoose.connect(db, { useNewUrlParser: true }, err => {
+	if (!err) {
+		console.log('DB connect succeed !')
+	} else {
+		console.error(err)
+	}
+});
 
 // --- Use dateFormat to format date-time ---
 var hbs = require('hbs');
