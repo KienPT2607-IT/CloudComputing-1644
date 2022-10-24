@@ -38,11 +38,19 @@
 			<label for="floatingOrigin">Origin</label>
 		</div>
 		{{!-- size --}}
-		<div class="form-group mt-3">
-			<label class="text h6">Size</label><br>
+		{{!-- <div class="form-group m-3">
+			<label class="">Size</label><br>
 			Small <input type="radio" name="size" value="Small">
 			Medium <input type="radio" name="size" value="Medium">
 			Large <input type="radio" name="size" value="Large">
+		</div> --}}
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="size" id="flexRadioDefault1">
+			<label class="form-check-label" for="flexRadioDefault1">Small</label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="size" id="flexRadioDefault2" checked>
+			<label class="form-check-label" for="flexRadioDefault2">Medium</label>
 		</div>
 		{{!-- pieces --}}
 		<div class="form-floating m-2">
