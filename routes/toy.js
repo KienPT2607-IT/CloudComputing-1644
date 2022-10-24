@@ -54,7 +54,7 @@ router.post('/add', (req, res) => {
     ToyModel.create(req.body, (err) => {
         if (!err) {
             console.log('Add new toy successfully!')
-            res.redirect("/toy")
+            res.redirect("/toy/admin")
         }
     })
 })
